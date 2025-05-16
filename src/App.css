@@ -1,38 +1,239 @@
-.App {
+/* Reset some default styles */
+body, h1, h2, p, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main container */
+.landingPagecontainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #121212;
+  padding: 20px;
+}
+
+/* Navigation bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+  margin-bottom: 40px;
+}
+
+.navHeader h2 {
+  color: #FF9839;
+  font-size: 24px;
+}
+
+/* Navigation options */
+.navlist {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navlist p {
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #dddddd;
+}
+
+.navlist p:hover {
+  color: #FF9839;
+}
+
+.navlist div[role="button"] {
+  background-color: #FF9839;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navlist div[role="button"]:hover {
+  background-color: #e67e22;
+}
+
+/* Main content */
+.landingMaincontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 30px;
+}
+
+/* Text section */
+.landingMaincontainer h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  max-width: 500px;
+  color: #ffffff;
+}
+
+.landingMaincontainer p {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #bbbbbb;
+}
+
+/* Image section */
+.landingMaincontainer img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .landingMaincontainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .landingMaincontainer h1 {
+    font-size: 36px;
+  }
+}
+
+.getStartedButton {
+  background-color: #FF9839;
+  color: white;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.getStartedButton:hover {
+  background-color: #e67e22;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.getStartedButton a {
+  color: white;
+  text-decoration: none;
+  display: block;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Home Page Container */
+.meetContainer {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: 60px 40px;
+  min-height: calc(100vh - 80px);
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+/* Left Panel */
+.leftPanel {
+  flex: 1;
+  padding: 20px;
+}
+
+.leftPanel h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Right Panel */
+.rightPanel {
+  flex: 1;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.rightPanel img {
+  max-width: 350px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Top Navigation */
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #1f1f1f;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Button and Icon tweaks */
+.navBar button,
+.navBar p,
+.navBar h2 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navBar button:hover {
+  background-color: #FF9839;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* TextField tweaks for MUI override */
+.MuiInputBase-root {
+  background-color: #2a2a2a !important;
+  color: white;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #555 !important;
+}
+
+.MuiInputLabel-root {
+  color: #aaa !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: #FF9839 !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #FF9839 !important;
+}
+/* Home page image styling */
+.rightPanel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.rightPanel img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+/* Reset anchor tag styles for login and register pages */
+a {
+  text-decoration: none;
+  color: inherit; /* Inherit the color from parent element */
+}
+
+a:hover {
+  text-decoration: none; /* Remove underline on hover */
 }
